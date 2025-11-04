@@ -1,12 +1,10 @@
 import { Link } from "@remix-run/react";
-import { StickyHeading } from "@rhei/react";
+import SectionTitle from "../SectionTitle";
 
 export default function Summary() {
   return (
     <section>
-      <StickyHeading>
-        <h2 className="text-h2 bg-normal border-sub mb-2 border-b">요약</h2>
-      </StickyHeading>
+      <SectionTitle content="Summary" />
 
       <article>
         <h3 className="text-h5 bg-normal">
@@ -57,7 +55,9 @@ export default function Summary() {
                       <Link
                         key={item.title}
                         to={item.link}
-                        className="rounded-md bg-gray-100 px-2 dark:bg-gray-700"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-md bg-gray-100 px-2 dark:bg-gray-800"
                         aria-label={`${item.title} 기술 문서 - 새 창에서 열림`}
                       >
                         {item.title}
@@ -93,7 +93,7 @@ const STACK = [
     list: [
       { title: "Tanstack Query", link: "https://tanstack.com/query/latest" },
       { title: "Zustand", link: "https://zustand-demo.pmnd.rs/" },
-      { title: "Redux", link: "https://redux.js.org/" },
+      // { title: "Redux", link: "https://redux.js.org/" },
     ],
   },
   {
